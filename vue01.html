@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 200px;
+            float: left;
+            background-color: #000;
+        }
+        .text{
+            height: 30px;
+            text-align: center;
+        }
+        .text a{
+            max-width: 100%;
+            color: #fff;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+    </div>
+    <div class="wrap">
+        <p class="text">
+            <a href="###">相册相相册</a>
+        </p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '操你妈'
+            }
+        })
+        console.log(vm)
+    </script>
+</body>
+</html>

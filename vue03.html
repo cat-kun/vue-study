@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- <li v-on:click="handler" v-for="item, index in lists">{{item}}</li> -->
+            <!-- v-on 简写 @: -->
+            <li @click="handler(index)" v-for="item, index in filterList">{{item}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 页面 = 数据 + 模板
+
+        /*
+            指令
+            v-for 循环
+            语法： v-for="值，下标 in 数组"
+        */
+
+        /*
+            需求：只要显示小于7的数
+        */
+        
+        let list = [1,2,3,4,5,6,7,8];
+
+        let vm = new Vue({
+            // 模板
+            el: '#app',
+            // 数据
+            data: {
+                lists: list
+            },
+            // 计算属性
+            computed: {
+                filterList (){
+                    let newList = this.lists.filter(item => item < 7)
+                    return newList;
+                }
+            },
+            // 方法
+            methods: {
+                handler(i){
+                    console.log(i)
+                }
+            }
+        })
+        console.log(vm)
+    </script>
+</body>
+</html>
